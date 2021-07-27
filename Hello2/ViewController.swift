@@ -10,11 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var helloWorldLabel: UILabel!
+    @IBOutlet var toggleBoottom: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        helloWorldLabel.isHidden = true
+        toggleBoottom.layer.cornerRadius = 10
     }
-
-
+    
+    @IBAction func makeBoottom() {
+        if helloWorldLabel.isHidden {
+            helloWorldLabel.isHidden = false
+            toggleBoottom.setTitle("Hide Text", for: .normal)
+        } else {
+            helloWorldLabel.isHidden = true
+            toggleBoottom.setTitle("Show Title", for: .normal)
+        }
+    }
+    
 }
-
